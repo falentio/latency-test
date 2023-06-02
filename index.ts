@@ -5,7 +5,7 @@ const sql = postgres(Deno.env.get("DATABASE_URL"))
 
 serve(async () => {
     const start = Date.now()
-    await sql`select 1`
+    await sql`select NOW()`
     const end = Date.now()
     return new Response("", {
         headers: {
